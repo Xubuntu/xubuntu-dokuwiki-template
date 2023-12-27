@@ -1,0 +1,205 @@
+/*
+ *  Dokuwiki customizations
+ *
+ */
+
+/*  Imitate the button look for action links in the toolbar */
+
+.post-toolbar .tools .action {
+	display: inline-block;
+
+	margin: 0 1em 0.5em 0;
+	padding: 0.5em 0.75em;
+
+	background-color: #fff;
+	box-shadow: 0 0 5px rgba( 0, 0, 0, 0.1 );
+
+	border: none;
+	border-bottom: 2px solid #ccc;
+}
+	.post-toolbar .tools .action:hover, .tools .action:active, .tools .action:focus {
+		box-shadow: 0 0 5px rgba( 0, 0, 0, 0.3 );
+		border-bottom: 2px solid #999;
+	}
+	.post-toolbar .tools .action:after {
+		display: block;
+		float: right;
+
+		content: "›";
+		font-weight: 300;
+		font-size: 140%;
+		margin: -0.1em 0 0 0.5em;
+		color: #555;
+	}
+	.post-toolbar .tools .action.edit,
+	.post-toolbar .tools .action.index {
+		border-bottom: 2px solid #7cb8f7;
+	}
+		.post-toolbar .tools .action.edit:hover, .post-toolbar .tools .action.edit:active, .post-toolbar .tools .action.edit:focus,
+		.post-toolbar .tools .action.index:hover, .post-toolbar .tools .action.index:active, .post-toolbar .tools .action.index:focus {
+			border-bottom: 2px solid #2c82dd;
+		}
+
+	.post-toolbar .right .action:last-child {
+		margin-right: 0;
+	}
+
+	/*  Dropdown menus... */
+	.post-toolbar .tools .menu {
+		background-color: rgba(48,132,222,1);
+		color: #fff;
+	}
+		.post-toolbar .tools .menu:after {
+			color: #fff;
+		}
+
+	#dw__toc .toggle { display: none; }
+	.post-toolbar .tools .menu #dw__toc { display: none; }
+	.post-toolbar .tools .menu {
+		position: relative;
+	}
+	.post-toolbar .tools .menu:hover #dw__toc {
+		background-color: #fff;
+		position: absolute;
+		top: 2.8em;
+		left: 0;
+		display: block;
+		width: 400px;
+		padding: 1em 1em 0 1em;
+		box-shadow: 0 0 5px rgba(0,0,0,0.3);
+	}
+
+
+/*  Hide the first header in the page if it's level 5  */
+
+.post-post > h5:nth-child(2) {
+	display: none;
+}
+
+/*  Common
+ *
+ */
+
+/*  Link to nonexistent page  */
+
+.wikilink2 {
+	color: rgba( 180, 0, 0, 1 );
+}
+
+/*  Icons for interwiki links  */
+
+.interwiki.iw_lphome {
+	background: transparent url(images/launchpad.png) 0 0.3em no-repeat;
+	padding-left: 18px;
+}
+
+.interwiki.iw_ubuntu {
+	background: transparent url(images/ubuntu.png) 0 0.3em no-repeat;
+	padding-left: 20px;
+}
+
+.license {
+	font-size: 80%;
+}
+
+/*  Plugins
+ *
+ */
+
+/*  Better Sitemap  */
+
+.sitemap ul {
+	margin-bottom: 0 !important;
+}
+	.sitemap li ul {
+		margin-left: 1em;
+	}
+	.sitemap li ul li a {
+		color: #444;
+	}
+
+/*  Formatting  */
+
+sub { font-variant-position: sub; }
+sup { font-variant-position: super; }
+
+/*  Lists  */
+
+ol li ul,
+ol li ol,
+ul li ol,
+ul li ul {
+	margin-bottom: 0 !important;
+}
+
+/*  Tables  */
+
+table {
+	border-bottom: 1px dotted rgba( 0, 0, 0, 0.1 );
+	font-size: 90%;
+}
+	table th,
+	table td {
+		border: none;
+		border-top: 1px dotted rgba( 0, 0, 0, 0.1 );
+	}
+		table th {
+			padding: 3px;
+			background-color: rgba( 0, 0, 0, 0.03 );
+		}
+		table td {
+			background-color: transparent;
+		}
+
+
+/*  Dokuwiki admin etc.  */
+
+.centeralign {
+	text-align: left;
+}
+
+textarea#wiki__text {
+	width: 100%;
+}
+
+fieldset legend:first-child {
+	/* A variation of the h2 look */
+	display: block;
+	width: 100%;
+
+	margin: 1em 0 0.5em 0;
+	padding-top: 0.2em;
+	line-height: 1.4em;
+
+	font-size: 140%;
+	border-top: 1px dotted #ccc;
+}
+
+button[disabled="disabled"] {
+	display: none;
+}
+
+#acl__detail {
+	height: auto;
+}
+
+#config__manager fieldset {
+	margin: 0;
+	padding: 0;
+}
+
+fieldset label.block {
+	display: flex;
+	margin-bottom: 0.2em;
+}
+fieldset label.block span {
+	flex: 3;
+	vertical-align: bottom;
+}
+fieldset label.block input {
+	flex: 7;
+	padding: 0;
+}
+fieldset label.block + br {
+	display: none;
+}
